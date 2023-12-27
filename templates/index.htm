@@ -1,0 +1,26 @@
+{% extends 'header.htm' %}
+
+{% block content %}
+
+<div class=" container text-center border border-secondary p-5 col-md-8 col-xs-8 rounded" style="margin-top: 120px;">
+    <h1 class="display-4 my-3 fw-bold ">TEXT TO SPEECH</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <textarea name="text" id="" cols="30" rows="5" placeholder="ENTER THE TEXT YOU WANT TO SPEAK" class="form form-control my-2"></textarea>
+        <select name="speaker" class="form form-control my-2 " id="">
+            <option value="" selected disabled>SELECT THE VOICE</option>
+            <option value="male">MALE</option>
+            <option value="female">FEMALE</option>
+        </select>
+        <select name="speed" class="form form-control my-2 " id="">
+            <option value="" disabled selected>SELECT THE SPEECH YOU WANT TO SPEAK</option>
+            <option value="slow">SLOW</option>
+            <option value="normal">NORMAL</option>
+            <option value="fast">FAST</option>
+        </select>
+        <input type="submit" value="CONVERT" class="btn btn-primary w-100 mt-2">
+
+    </form>
+</div>
+
+{% endblock %}
